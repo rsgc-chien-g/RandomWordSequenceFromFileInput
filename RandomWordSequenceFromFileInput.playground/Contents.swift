@@ -111,22 +111,43 @@ Goal #1
 
 My algorithm
 ------------
-
+Count the total number of letters and create a array and make a value for each letter
 
 My assumptions
 --------------
-
+The string of letter will not make sense as they are random
 
 Probable data structures
 ------------------------
-
+array, for loop, conditionals
 
 */
 
 // Implement Goal #1 below...
 
+var wordCounts = [String: Int]()
 
+wordCounts
 
+for word in words
+{
+    if wordCounts[word] == nil
+    {
+        wordCounts[word] = 1
+    }else{
+        wordCounts[word]! = wordCounts[word]!+1
+        
+    }
+}
+var percentage = [String: Float]()
+var totalWordCount = Float(words.count)
+
+for (word, counts) in wordCounts
+{
+    percentage[word] = Float(counts) / totalWordCount * 100
+}
+
+percentage
 /*: 
 
 ## Goal 2
