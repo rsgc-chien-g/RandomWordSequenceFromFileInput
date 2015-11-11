@@ -139,8 +139,9 @@ for word in words
         
     }
 }
-var percentage = [String: Float]()
+
 var totalWordCount = Float(words.count)
+var percentage = [String: Float]()
 
 for (word, counts) in wordCounts
 {
@@ -148,6 +149,24 @@ for (word, counts) in wordCounts
 }
 
 percentage
+var outputString = ""
+var upperValue: Float = 0.0
+
+for _ in 1...20
+{
+    let randomValue = Float(arc4random_uniform(100))
+    
+    for(letter, probabilities) in percentage
+    {
+        upperValue += probabilities
+        if (randomValue > upperValue)
+        {
+            outputString += String(letter)
+            break
+        }
+    }
+}
+outputString
 /*: 
 
 ## Goal 2
